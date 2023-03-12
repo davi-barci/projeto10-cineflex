@@ -27,7 +27,7 @@ export default function SeatsContainer(props){
     return(
         <ContainerSeats>
             {props.assentos.map((elem, index) =>
-            <SeatItem key={index} cor={verificaStatus(elem)} onClick={() => selecionarAssento(elem)}>{("0" + elem.name).slice(-2)}</SeatItem>
+            <SeatItem key={index} cor={verificaStatus(elem)} onClick={() => selecionarAssento(elem)} data-test="seat">{("0" + elem.name).slice(-2)}</SeatItem>
             )}
         </ContainerSeats>
     );

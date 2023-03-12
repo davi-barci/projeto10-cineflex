@@ -3,11 +3,11 @@ import styled from "styled-components";
 
 export default function SessionContainer(props){
     return (
-        <Session>
+        <Session data-test="movie-day">
             {props.sessaoAtual.weekday} - {props.sessaoAtual.date}
             <ButtonsContainer>
                 {props.sessaoAtual.showtimes.map((elem, index) => 
-                <Link key={index} to={`/assentos/${elem.id}`}><button>{elem.name}</button></Link>)}
+                <Link key={index} to={`/assentos/${elem.id}`} data-test="showtime"><button>{elem.name}</button></Link>)}
             </ButtonsContainer>
         </Session>
     );

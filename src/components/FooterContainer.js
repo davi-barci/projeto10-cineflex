@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export default function FooterContainer(props){
     return(
-        <FooterStyle>
+        <FooterStyle data-test="footer">
             <div>
                 <img src={props.posterFilme} alt="poster" />
             </div>

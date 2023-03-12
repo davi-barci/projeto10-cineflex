@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function MovieContainer(props){
     return (
-        <MovieContainerStyle>
+        <MovieContainerStyle data-test="movie">
             <Link to={`/sessoes/${props.filmeAtual.id}`}>
                 <img src={props.filmeAtual.posterURL} alt="poster"/>
             </Link>
