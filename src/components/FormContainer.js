@@ -33,10 +33,10 @@ export default function FormContainer(props){
     return (
         <Form onSubmit={finalizarCompra}>
             Nome do Comprador:
-            <input type="text" placeholder="Digite seu nome..." required onChange={e => props.setNome(e.target.value)}  data-test="client-name"/>
+            <input type="text" placeholder="Digite seu nome..." required onChange={e => props.setNome(e.target.value)} value={props.nome} data-test="client-name"/>
 
             CPF do Comprador:
-            <input type="text" placeholder="Digite seu CPF..." required onChange={e => props.setCpf(e.target.value)}  data-test="client-cpf"/>
+            <input type="text" placeholder="Digite seu CPF..." required onChange={e => props.setCpf(e.target.value)}  value={props.cpf} data-test="client-cpf"/>
 
             <button type="submit" data-test="book-seat-btn">Reservar Assento(s)</button>
         </Form>
