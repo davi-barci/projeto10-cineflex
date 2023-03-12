@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 export default function App() {
 
     const [filmes, setFilmes] = useState([]);
+    const [pedido, setPedido] = useState({});
 
     useEffect(() => {
 		const requisicao = axios.get("https://mock-api.driven.com.br/api/v8/cineflex/movies");
@@ -35,8 +36,8 @@ export default function App() {
 			<Routes>
 				<Route path="/" element={<HomePage filmes={filmes}/>} />
 				<Route path="/sessoes/:idFilme" element={<SessionsPage />}/>
-                <Route path="/assentos/:idSessao" element={<SeatsPage />}/>
-                <Route path="/sucesso" element={<SuccessPage /> }/>
+                <Route path="/assentos/:idSessao" element={<SeatsPage setPedido={setPedido}/>}/>
+                <Route path="/sucesso" element={<SuccessPage pedido={pedido}/>}/>
 			</Routes>
 		</BrowserRouter>
         </>

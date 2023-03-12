@@ -7,12 +7,13 @@ import CaptionContainer from "../../components/CaptionContainer";
 import SeatsContainer from "../../components/SeatsContainer";
 import FormContainer from "../../components/FormContainer";
 
-export default function SeatsPage() {
+export default function SeatsPage(props) {
 
     const { idSessao } = useParams();
 
     const [assentos, setAssentos] = useState(null);
     const [selecionados, setSelecionados] = useState([]);
+    const [assentosSelecionados, setAssentosSelecionados] = useState([]);
     const [nome, setNome] = useState("");
     const [cpf, setCpf] = useState("");
     const statusAssento = ["Selecionado", "Disponível", "Indisponível"];
@@ -42,6 +43,8 @@ export default function SeatsPage() {
                 assentos={assentos.seats} 
                 selecionados={selecionados} 
                 setSelecionados={setSelecionados}
+                assentosSelecionados = {assentosSelecionados}
+                setAssentosSelecionados = {setAssentosSelecionados}
                 corStatus = {corStatus}
             />
 
@@ -56,6 +59,11 @@ export default function SeatsPage() {
                 cpf = {cpf}
                 setCpf = {setCpf}
                 selecionados = {selecionados}
+                assentosSelecionados = {assentosSelecionados}
+                nomeFilme = {assentos.movie.title}
+                diaFilme = {assentos.day.date}
+                horarioFilme = {assentos.name}
+                setPedido = {props.setPedido}
             />
 
             <FooterContainer 

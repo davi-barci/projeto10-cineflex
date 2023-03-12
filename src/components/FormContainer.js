@@ -17,7 +17,13 @@ export default function FormContainer(props){
 
             const requisicao = axios.post("https://mock-api.driven.com.br/api/v8/cineflex/seats/book-many", body);
 
-            requisicao.then(() => navigate("/sucesso"));
+            requisicao.then(() => {
+                const pedidoFinal = {nomeFilme: props.nomeFilme, diaFilme: props.diaFilme, 
+                    horarioFilme: props.horarioFilme, assentos: props.assentosSelecionados, 
+                    nome: props.nome, cpf: props.cpf}
+                props.setPedido(pedidoFinal);
+                navigate("/sucesso");
+            });
             requisicao.catch(err => {
                 console.log(err.response.data);
             });

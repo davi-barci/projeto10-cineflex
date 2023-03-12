@@ -1,7 +1,13 @@
 import styled from "styled-components"
 import ListContainer from "../../components/ListContainer"
+import { useEffect } from "react"
 
 export default function HomePage(props) {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
+
     return (
         <PageContainer>
             Selecione o filme

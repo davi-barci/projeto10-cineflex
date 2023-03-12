@@ -7,8 +7,10 @@ export default function SeatsContainer(props){
             alert("Esse assento não está disponível");
         }else if(props.selecionados.includes(assento.id)){
             props.setSelecionados(props.selecionados.filter(elem => elem != assento.id));
+            props.setAssentosSelecionados(props.assentosSelecionados.filter(elem => elem != ("0" + assento.name).slice(-2)));
         }else{
             props.setSelecionados([...props.selecionados, assento.id]);
+            props.setAssentosSelecionados([...props.assentosSelecionados, ("0" + assento.name).slice(-2)]);
         }
     }
 
@@ -25,7 +27,7 @@ export default function SeatsContainer(props){
     return(
         <ContainerSeats>
             {props.assentos.map((elem, index) =>
-            <SeatItem key={index} cor={verificaStatus(elem)} onClick={() => selecionarAssento(elem)}>{elem.name}</SeatItem>
+            <SeatItem key={index} cor={verificaStatus(elem)} onClick={() => selecionarAssento(elem)}>{("0" + elem.name).slice(-2)}</SeatItem>
             )}
         </ContainerSeats>
     );
