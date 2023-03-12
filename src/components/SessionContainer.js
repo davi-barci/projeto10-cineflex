@@ -28,7 +28,7 @@ const ButtonsContainer = styled.div`
     margin: 20px 0;
 
     a {
-        width: 85px;
+        width: 83px;
         text-decoration: none; 
         margin-right: 20px;
     }

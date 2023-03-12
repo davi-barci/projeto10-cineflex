@@ -8,6 +8,7 @@ export default function FooterContainer(props){
             </div>
             <div>
                 <p>{props.nomeFilme}</p>
+                {(props.horarioFilme !== undefined) && <p>{props.diaFilme} - {props.horarioFilme}</p>}
             </div>
         </FooterStyle>
     );
