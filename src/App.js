@@ -27,7 +27,7 @@ export default function App() {
 
     if(filmes.length === 0){
         return(<LoadingContainer texto={"Carregando Filmes..."}/>);
-    } 
+    }
 
     return (
         <>

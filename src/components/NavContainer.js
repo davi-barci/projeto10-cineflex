@@ -47,4 +47,4 @@ const NavBar = styled.div`
             color: #E8833A;
         }
     }
-`
+`;

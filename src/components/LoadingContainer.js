@@ -23,5 +23,5 @@ const Loading = styled.div`
         color: #E8833A;
         font-size: 35px;
     }
-`
+`;
 
