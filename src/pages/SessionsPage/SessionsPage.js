@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import FooterContainer from "../../components/FooterContainer"
 import SessionContainer from "../../components/SessionContainer";
+import LoadingContainer from "../../components/LoadingContainer";
 
 export default function SessionsPage() {
 
@@ -23,7 +24,7 @@ export default function SessionsPage() {
     }, []);
 
     if (sessoes === null) {
-        return (<div>Carregando Sessões...</div>);
+        return(<LoadingContainer texto={"Carregando Sessões..."}/>);
     }
 
     return (

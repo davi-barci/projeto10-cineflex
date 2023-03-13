@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import NavContainer from "./components/NavContainer";
+import LoadingContainer from './components/LoadingContainer';
 import HomePage from "./pages/HomePage/HomePage";
 import SeatsPage from "./pages/SeatsPage/SeatsPage";
 import SessionsPage from "./pages/SessionsPage/SessionsPage";
@@ -25,8 +26,8 @@ export default function App() {
 	}, []);
 
     if(filmes.length === 0){
-        return(<div>Carregando filmes...</div>);
-    }
+        return(<LoadingContainer texto={"Carregando Filmes..."}/>);
+    } 
 
     return (
         <>

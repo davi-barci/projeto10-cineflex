@@ -6,6 +6,7 @@ import FooterContainer from "../../components/FooterContainer";
 import CaptionContainer from "../../components/CaptionContainer";
 import SeatsContainer from "../../components/SeatsContainer";
 import FormContainer from "../../components/FormContainer";
+import LoadingContainer from "../../components/LoadingContainer";
 
 export default function SeatsPage(props) {
 
@@ -32,7 +33,7 @@ export default function SeatsPage(props) {
     }, []);
 
     if (assentos === null) {
-        return (<div>Carregando Assentos...</div>);
+        return(<LoadingContainer texto={"Carregando Assentos..."}/>);
     }
 
     return (
